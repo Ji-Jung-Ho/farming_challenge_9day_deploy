@@ -1,0 +1,113 @@
+@import url(../css/reset.css);
+
+#wrap {
+  width: 100%;
+  height: 100%;
+  #header {
+    width: 100%;
+    position: relative;
+    .container {
+      width: 1200px;
+      margin: 0 auto;
+      .nav-box {
+        .nav {
+          .nav-ul {
+            display: flex;
+            justify-content: space-around;
+            li {
+              width: 150px;
+              height: 60px;
+              background-color: #000;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              h2 {
+                color: #fff;
+                font-size: 20px;
+              }
+            }
+          }
+        }
+        .viewport {
+          opacity: 0;
+          .hamburger-menu {
+            margin: 0 auto;
+            width: 40px;
+            height: 30px;
+          }
+          .hambar-ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            > li {
+              background-color: #000;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              h2 {
+                color: #fff;
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Media query for responsive layout
+  
+  @media screen and (max-width: 1200px) {
+    #header {
+      width: 100%;
+      height: 100px;
+      .container {
+        width: 1200px;
+        .nav-box {
+          .nav {
+            .nav-ul {
+              display: none;
+            }
+          }
+          .viewport {
+            width: 100%;
+            position: relative;
+            opacity: 1;
+            .hamburger-menu {
+              width: 50px;
+              height: 50px;
+              transition: all 0.3s;
+              background: none;
+              border: none;
+              img {
+                width: 100%;
+              }
+            }
+            .hambar-ul {
+              margin-top: -162px;
+              transition: all 0.3s;
+              &.visible {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: all 0.3s;
+                margin-top: 0;
+                background-color: #000;
+              }
+              > li {
+                width: 100%;
+                border-bottom: 1px solid #fff;
+                padding: 10px;
+                h2 {
+                  color: #fff;
+                  font-size: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
